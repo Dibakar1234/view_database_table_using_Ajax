@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Document</title>
+    <script type="text/javascript">
+       function myFun(argument) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = () => {
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    document.getElementById("t").innerHTML = xhr.responseText;
+                }
+            }
+            xhr.open("get", "view_user_query.php", true);
+            xhr.send();
+       }
+    </script>
+    <style type="text/css">
+		table,th,td,tr{
+			color:blue;
+			border:1px solid black;
+		}
+	</style>
+</head>
+<body>
+    <button onclick="myFun();">Click</button><br><br>
+    <div id="t"></div></h2>
+    
+</body>
+</html>
